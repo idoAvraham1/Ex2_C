@@ -5,16 +5,17 @@ int main() {
     int dist[N][N];
     int i, j;
     char options;
-
+    int IsValidMatrix=0;
     do {
         scanf(" %c", &options); 
 
         if (options == 'A') {
             initMatrix(graph);
+            IsValidMatrix=1;
         } else if (options == 'B') {
             scanf("%d %d", &i, &j);
             shortestPath(graph, dist);
-            if (dist[i][j] == 0) {
+            if (dist[i][j] == 0 || IsValidMatrix==0) {
                 printf("False\n");
             } else {
                 printf("True\n");
@@ -22,7 +23,7 @@ int main() {
         } else if (options == 'C') {
             scanf("%d %d", &i, &j);
             shortestPath(graph, dist);
-            if (dist[i][j] == 0) {
+            if (dist[i][j] == 0 || IsValidMatrix==0) {
                 printf("-1\n");
             } else {
                 printf("%d\n", dist[i][j]);

@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include "my_mat.h"
 #include <math.h>
 #define N 10
