@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "my_mat.h"
 int main() {
     int graph[N][N];
     int dist[N][N];
