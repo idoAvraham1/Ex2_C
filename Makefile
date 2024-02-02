@@ -5,12 +5,12 @@ OBJ= my_mat.o
 all: main
 
 # Create static library with my_mat
-my_mat.so: $(OBJ) my_mat.h
+libmy_mat.so: $(OBJ) my_mat.h
 	$(CC) -shared -fpic -o $@ $^
 
 # Build main with my_mat
 main: main.o my_mat.so 
-	$(CC) $(CFLAGS) main.o ./my_mat.so -o main  
+	$(CC) $(CFLAGS) main.o ./libmy_mat.so -o main  
 
 #compile main.c 
 main.o: main.c my_mat.h
