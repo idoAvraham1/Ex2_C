@@ -9,7 +9,7 @@ libmy_mat.so: $(OBJ) my_mat.h
 	$(CC) -shared -fpic -o $@ $^
 
 # Build main with my_mat
-main: main.o my_mat.so 
+main: main.o libmy_mat.so 
 	$(CC) $(CFLAGS) main.o ./libmy_mat.so -o main  
 
 #compile main.c 
