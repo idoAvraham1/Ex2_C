@@ -11,10 +11,10 @@ int main() {
 
         if (options == 'A') {
             initMatrix(graph);
+              shortestPath(graph, dist);
             IsValidMatrix=1;
         } else if (options == 'B') {
             scanf("%d %d", &i, &j);
-            shortestPath(graph, dist);
             if (dist[i][j] == 0 || IsValidMatrix==0) {
                 printf("False\n");
             } else {
@@ -22,7 +22,6 @@ int main() {
             }
         } else if (options == 'C') {
             scanf("%d %d", &i, &j);
-            shortestPath(graph, dist);
             if (dist[i][j] == 0 || IsValidMatrix==0) {
                 printf("-1\n");
             } else {
