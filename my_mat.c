@@ -3,20 +3,14 @@
 #include <math.h>
 #define N 10
 
- void shortestPath(int graph[N][N],int dist[N][N]){
-
-     for (int i = 0; i < N; i++) {
-         for (int j = 0; j < N; j++) {
-            dist[i][j] = graph[i][j];
-        }
-     }
+ void shortestPath(int graph[N][N]){
      for (int k = 0; k < N; k++) {
          for (int i = 0; i < N; i++) {
              for (int j = 0; j < N; j++) {
                  if (i != j) {
-                     if (dist[i][k] != 0 &&  dist[k][j] != 0) {
-                         if (dist[i][j] == 0 || dist[i][j] > dist[i][k] + dist[k][j]) {
-                             dist[i][j] = dist[i][k] + dist[k][j];
+                     if (graph[i][k] != 0 &&  graph[k][j] != 0) {
+                         if (graph[i][j] == 0 ||graph[i][j] > graph[i][k] + graph[k][j]) {
+                             graph[i][j] = graph[i][k] + graph[k][j];
                          }
                      }
                  }
@@ -24,6 +18,27 @@
          }
      }
  }
+
+void isValidPath(int graph[N][N], int IsValidMatrix){
+         scanf("%d %d", &i, &j);
+            if (graph[i][j] == 0 || IsValidMatrix==0) {
+                printf("False \n");
+            } else {
+                printf("True\n", dist[i][j]);
+            }
+
+}
+void shortestPathWeight(int graph[N][N], int IsValidMatrix){
+    scanf("%d %d", &i, &j);
+            if (graph[i][j] == 0 || IsValidMatrix==0) {
+                printf("-1 \n");
+            } else {
+                printf("%d\n", dist[i][j]);
+            }
+
+}
+
+
 void initMatrix(int matrix[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
