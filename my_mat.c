@@ -27,7 +27,7 @@ void isValidPath(int graph[N][N], int IsValidMatrix){
         int i, j;
          scanf("%d %d", &i, &j);
             if (graph[i][j] == 0 || IsValidMatrix==0) {
-                printf("False \n");
+                printf("False\n");
             } else {
                 printf("True\n");
             }
@@ -37,7 +37,7 @@ void shortestPathWeight(int graph[N][N], int IsValidMatrix){
     int i, j;
     scanf("%d %d", &i, &j);
             if (graph[i][j] == 0 || IsValidMatrix==0) {
-                printf("-1 \n");
+                printf("-1\n");
             } else {
                 printf("%d\n", graph[i][j]);
             }
