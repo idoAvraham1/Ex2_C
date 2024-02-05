@@ -9,8 +9,10 @@ int main() {
 
         if (options == 'A') {
             initMatrix(graph);
+            shortestPath(graph);
             IsValidMatrix=1;
         } else if (options == 'B') {
+            
             isValidPath(graph,IsValidMatrix);
            
         } else if (options == 'C') {
