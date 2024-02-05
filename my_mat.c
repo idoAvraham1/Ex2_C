@@ -3,14 +3,19 @@
 #include <math.h>
 #define N 10
 
- void shortestPath(int graph[N][N]){
+ void shortestPath(int graph[N][N],int dist[N][N]){
+     for (int i = 0; i < N; i++) {
+         for (int j = 0; j < N; j++) {
+            dist[i][j] = graph[i][j];
+        }
+     }
      for (int k = 0; k < N; k++) {
          for (int i = 0; i < N; i++) {
              for (int j = 0; j < N; j++) {
                  if (i != j) {
-                     if (graph[i][k] != 0 &&  graph[k][j] != 0) {
-                         if (graph[i][j] == 0 ||graph[i][j] > graph[i][k] + graph[k][j]) {
-                             graph[i][j] = graph[i][k] + graph[k][j];
+                     if (dist[i][k] != 0 &&  dist[k][j] != 0) {
+                         if (dist[i][j] == 0 || dist[i][j] > dist[i][k] + dist[k][j]) {
+                             dist[i][j] = dist[i][k] + dist[k][j];
                          }
                      }
                  }
@@ -18,7 +23,6 @@
          }
      }
  }
-
 void isValidPath(int graph[N][N], int IsValidMatrix){
         int i, j;
          scanf("%d %d", &i, &j);

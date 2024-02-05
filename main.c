@@ -2,6 +2,7 @@
 #include "my_mat.h"
 int main() {
     int graph[N][N];
+    int dist[N][N];
     char options;
     int IsValidMatrix=0;
     do {
@@ -9,14 +10,14 @@ int main() {
 
         if (options == 'A') {
             initMatrix(graph);
-            shortestPath(graph);
+            shortestPath(graph,dist);
             IsValidMatrix=1;
         } else if (options == 'B') {
-            
-            isValidPath(graph,IsValidMatrix);
+
+            isValidPath(dist,IsValidMatrix);
            
         } else if (options == 'C') {
-            shortestPathWeight(graph,IsValidMatrix);
+            shortestPathWeight(dist,IsValidMatrix);
         }
     } while (options != 'D');
 
