@@ -88,7 +88,7 @@ int main() {
    int maxProfit = KnapSack(weights, values, selected_bool);
 
    // Print the maximum profit
-   printf("Maximum profit is: %d\n", maxProfit);
+   printf("Maximum profit: %d\n", maxProfit);
    //print selected items
    PrintItems(selected_bool,items);
 
