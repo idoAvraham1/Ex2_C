@@ -1,7 +1,6 @@
 #include "my_mat.h"
 #include <stdio.h>
 #include <math.h>
-#define N 10
 
  void shortestPath(int graph[N][N],int dist[N][N]){
      for (int i = 0; i < N; i++) {

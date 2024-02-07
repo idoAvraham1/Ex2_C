@@ -2,23 +2,23 @@ CC = gcc
 CFLAGS = -Wall -g
 OBJ = my_mat.o
 
-all: connections my_Knapsack
+all: my_graph my_Knapsack
 
 # Create shared library with my_mat
 libmy_mat.so: $(OBJ) my_mat.h
 	$(CC) -shared -fpic -o $@ $^
 
 # Build main with libmy_mat
-connections: main.o libmy_mat.so 
-	$(CC) $(CFLAGS) main.o ./libmy_mat.so -o connections 
+my_graph: my_graph.o libmy_mat.so 
+	$(CC) $(CFLAGS) my_graph.o ./libmy_mat.so -o my_graph
 
 # Compile main.c 
-main.o: main.c my_mat.h
-	$(CC) $(CFLAGS) -c main.c
+my_graph.o: my_graph.c my_mat.h
+	$(CC) $(CFLAGS) -c my_graph.c
 
 my_Knapsack: my_Knapsack.o
 	$(CC) $(CFLAGS) my_Knapsack.o -o my_Knapsack
 
 # Clean all
 clean:
-	rm -f *.o *.so connections my_Knapsack
+	rm -f *.o *.so my_graph my_Knapsack

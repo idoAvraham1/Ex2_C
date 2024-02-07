@@ -53,21 +53,10 @@ int KnapSack(int weights[], int values[],int selected_bool[]){
 }
 void ScanArrays(char items[], int values[], int weights[]) {
     for (int i = 0; i < ITEMS; ++i) {
-        // Input for items array
-        //printf("Enter item: ");
         scanf(" %c", &items[i]);
-    }
-
-    for (int i = 0; i < ITEMS; ++i) {
-        // Input for values array
-        //printf("Enter value for item %c: ", items[i]);
         scanf("%d", &values[i]);
-    }
-
-    for (int i = 0; i < ITEMS; ++i) {
-        // Input for weights array
-        //printf("Enter weight for item %c: ", items[i]);
         scanf("%d", &weights[i]);
+
     }
 }
 
