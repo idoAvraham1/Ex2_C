@@ -69,7 +69,7 @@ void PrintItems(int selected_bool[], char items[]) {
            printf(" %c", items[i]);
        }
    }
-   printf("\n");
+    printf("\n");
 }
 
 
