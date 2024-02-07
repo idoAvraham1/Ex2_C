@@ -62,14 +62,13 @@ void ScanArrays(char items[], int values[], int weights[]) {
 
 
 void PrintItems(int selected_bool[], char items[]) {
-   printf("Items that give the maximum profit: [");
+   printf("Selected items: ");
    for (int i = 0; i < ITEMS; ++i) {
 
        if (selected_bool[i] == 1) {
-           printf("%c,", items[i]);
+           printf("%c ", items[i]);
        }
    }
-   printf("]\n");
 }
 
 
@@ -84,23 +83,13 @@ int main() {
    // Scan arrays from the user
    ScanArrays(items, values, weights);
 
-
    // Call KnapSack to calculate maximum profit and selected items
    int maxProfit = KnapSack(weights, values, selected_bool);
 
-
    // Print the maximum profit
    printf("Maximum profit is: %d\n", maxProfit);
-
-
-   // Print the selected items
-   printf("Items that give the maximum profit: [");
-   for (int i = 0; i < ITEMS; ++i) {
-       if (selected_bool[i] == 1) {
-           printf("%c , ", items[i]);
-       }
-   }
-   printf("]\n");
+   //print selected items
+   PrintItems(selected_bool,items);
 
 
    return 0;
